@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* LIGHT MODE (default) */
+  :root {
+    --color-background: #F5F7FA;
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #E9ECF0;
+    --color-text-primary: #1A1A2E;
+    --color-text-secondary: #4A4A5A;
+    --color-text-muted: #8A8A9A;
+    --color-border: #D1D5DB;
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+    --shadow-glow: 0 0 40px rgba(226, 61, 63, 0.15);
+  }
+
+  /* DARK MODE */
+  .dark {
+    --color-background: #0F0F10;
+    --color-surface: #1C1D1F;
+    --color-surface-hover: #282A2E;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #A0A4A8;
+    --color-text-muted: #6B6F75;
+    --color-border: #323639;
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.6);
+    --shadow-glow: 0 0 40px rgba(226, 61, 63, 0.25);
+  }
+
+  body {
+    @apply bg-background text-text-primary transition-colors duration-300;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-bounce-slow {
+    animation: bounceSlow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
